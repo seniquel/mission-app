@@ -14,10 +14,10 @@ public class MissionAppApplication {
 				(MissionAppApplication.class, args))
 		{
 			// Récupération d'un bean de type Runnable
-			Runnable exec = context.getBean(Runnable.class);
+			//Runnable exec = context.getBean(Runnable.class);
 
 			// exécution
-			exec.run();
+			//exec.run();
 		}
 	}
 }

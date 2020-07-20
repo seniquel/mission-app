@@ -2,6 +2,7 @@ package dev.mission.exec;
 
 import java.util.List;
 
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Controller;
 
@@ -10,7 +11,7 @@ import dev.mission.repository.MissionRepository;
 
 @Controller
 @Profile("lister")
-public class ListerProchainesMissions implements Runnable {
+public class ListerProchainesMissions implements CommandLineRunner {
 	
 	private MissionRepository missionRepository;
 	
@@ -20,7 +21,7 @@ public class ListerProchainesMissions implements Runnable {
 	}
 
 	@Override
-	public void run() {
+	public void run(String... args) throws Exception {
 		List<Mission> missions = missionRepository.findMissionByDate();
 		
 		System.out.println("Libelle\t\tTaux\tDébut\t\tFin");
